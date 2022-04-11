@@ -47,8 +47,8 @@ Based on the structure of the data I found that the open weather free plan can f
 
 ### **Information Structure**
 
-**dt**: Current time, Unix, UTC
-**pop**: Probability of precipitation.
+- **dt**: Current time, Unix, UTC
+- **pop**: Probability of precipitation.
 
 ```json
 {
@@ -141,19 +141,29 @@ Both in microsoft and in google there is a graph that shows the evolution of the
 
 I design a graph component that shows the temperature each day for both desktop and mobile
 
-![graph-desktop](img/graph-desktop.png)
-
-![graph-mobile](img/graph-mobile.png)
+<div style="display:flex">
+     <div style="padding-right:10px;width:90%;" >
+          <img src="img/graph-desktop.png" />
+     </div>
+     <div style="padding-left:10px;width=10%;" >
+          <img src="img/graph-mobile.png" />
+     </div>
+</div>
 
 ### Figma
 
 Use figma software to design the user interface of the application, both for desktops and mobile.
 
-![Laptop.png](img/Laptop.png)
+<div style="display:flex">
+     <div style="padding-right:10px;width:90%;" >
+          <img src="img/Laptop.png" />
+     </div>
+     <div style="padding-left:10px;width=10%;" >
+          <img src="img/Mobile.png" />
+     </div>
+</div>
 
-![Mobile.png](img/Mobile.png)
-
-[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Foxtq7PzoixHCXxNHpKF9lR%2FWeather-Forecast%3Fnode-id%3D0%253A1](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Foxtq7PzoixHCXxNHpKF9lR%2FWeather-Forecast%3Fnode-id%3D0%253A1)
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Foxtq7PzoixHCXxNHpKF9lR%2FWeather-Forecast%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
 
 ## 4. Development
 
