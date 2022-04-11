@@ -2,22 +2,22 @@
 
 ## 1. Requirements Analysis
 
-### **Funcional Requirements**
+### Funcional Requirements
 
 - The app shows the browser's current location’s weather conditions including date, location, temperature, corresponding description of the weather, and icon (assume the user will accept geolocation requests from the browser).
 - It should show an extended weather forecast for the next 5 days.
 - App should show also current humidity, wind, and precipitation percentage (chances of rain).
 - User can decide to use Celsius or Fahrenheit and save that selection for future usage (cookie or browser’s local storage).
 
-### **Research & inspiration**
+### Research & inspiration
 
 I was inspired by Google and Microsoft weather services, taking information structure, visual components and interactivity from them.
 
-![msn](img/msn.png)
+![msn](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/msn.png)
 
 [https://www.msn.com/en-us/weather/forecast/in-Washington,DC](https://www.msn.com/en-us/weather/forecast/in-Washington,DC)
 
-![google](img/google.png)
+![google](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/google.png)
 
 [https://www.google.com/search?q=Forecast+Weather](https://www.google.com/search?q=Forecast+Weather)
 
@@ -25,7 +25,7 @@ I was inspired by Google and Microsoft weather services, taking information stru
 
 Based on the structure of the data I found that the open weather free plan can fully cover all the required data.
 
-### **API REST resource**
+### API REST resource
 
 |                                | Free                                    |
 | ------------------------------ | --------------------------------------- |
@@ -45,7 +45,7 @@ Based on the structure of the data I found that the open weather free plan can f
 
 [https://openweathermap.org/full-price](https://openweathermap.org/full-price)
 
-### **Information Structure**
+### Information Structure
 
 - **dt**: Current time, Unix, UTC
 - **pop**: Probability of precipitation.
@@ -107,27 +107,27 @@ Based on the structure of the data I found that the open weather free plan can f
 
 ## 3. Design
 
-### \***\*Glassmorphism\*\***
+### Glassmorphism
 
 From the microsoft weather forecast service I use glasmorphism, which is a style based on transparency
 
-![glassmorphisms](img/glassmorphims.png)
+![glassmorphisms](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/glassmorphims.png)
 
 I design the visual components based on this style
 
-![cards-design](img/cards-design.png)
+![cards-design](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/cards-design.png)
 
 ### Icons
 
 On github there is a repository of weather icons in two versions filled and outlied. I take the outlied version.
 
-![icons](img/icons.png)
+![icons](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/icons.png)
 
 [https://basmilius.github.io/weather-icons/index-line.html](https://basmilius.github.io/weather-icons/index-line.html)
 
 Of these I select the ones that match the list of openweather icons
 
-![icons-openweather](img/icons-openweather.png)
+![icons-openweather](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/icons-openweather.png)
 
 [https://openweathermap.org/weather-conditions](https://openweathermap.org/weather-conditions)
 
@@ -135,35 +135,23 @@ Of these I select the ones that match the list of openweather icons
 
 Both in microsoft and in google there is a graph that shows the evolution of the temperature throughout the day
 
-![graph-msn](img/graph-msn.png)
+![graph-msn](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/graph-msn.png)
 
-![graph-google](img/graph-google.png)
+![graph-google](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/graph-google.png)
 
 I design a graph component that shows the temperature each day for both desktop and mobile
 
-<div style="display:flex">
-     <div style="padding-right:10px;width:90%;" >
-          <img src="img/graph-desktop.png" />
-     </div>
-     <div style="padding-left:10px;width=10%;" >
-          <img src="img/graph-mobile.png" />
-     </div>
-</div>
+<p float="left">
+   <img src="img/graph-desktop.png" width="500"/>
+  <img src="img/graph-mobile.png" width="150"/>
+</p>
 
 ### Figma
 
-Use figma software to design the user interface of the application, both for desktops and mobile.
+Use Figma software to design the user interface of the application, both for desktops and mobile.
 
-<div style="display:flex">
-     <div style="padding-right:10px;width:90%;" >
-          <img src="img/Laptop.png" />
-     </div>
-     <div style="padding-left:10px;width=10%;" >
-          <img src="img/Mobile.png" />
-     </div>
-</div>
-
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Foxtq7PzoixHCXxNHpKF9lR%2FWeather-Forecast%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+![Laptop](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/Laptop.png)
+![Mobile](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/Mobile.png)
 
 ## 4. Development
 
@@ -178,16 +166,18 @@ Use figma software to design the user interface of the application, both for des
 **Architecture design**
 
 - For the frontend in development, ReactJS is used in its version with TypeScript, the resulting files are hosted for free on github pages and made available for consumption 100% of the time.
-- **I**n order not to expose the API we need to use server side as middleware, to fulfill two functions: the first is to add the API_KEY of openWeather and the second is to filter the data from open weather to the browser for a lower load of information.
+- In order not to expose the API we need to use server side as middleware, to fulfill two functions: the first is to add the API_KEY of openWeather and the second is to filter the data from open weather to the browser for a lower load of information.
 - To implement this part of the server side, a firebase cloud function is used whose core is NodeJS and TypeScript is used in the development part.
 
-![architecture.png](img/architecture.png)
+![architecture.png](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/architecture.png)
 
 ### Server Development
 
 **Clone the repository**
 
-[`https://github.com/NestorPlasencia/forecast-weather.git`](https://github.com/NestorPlasencia/forecast-weather.git)
+```
+git clone https://github.com/NestorPlasencia/forecast-weather.git
+```
 
 **Get an OpenWeatherMap API Key**
 
@@ -241,7 +231,7 @@ the result should be the following
 {"cod":"400","message":"wrong latitude"}
 ```
 
-Add some latitute and longiturde
+Add some latitude and longitude
 
 [http://127.0.0.1:5001/forecast-project-cloud/us-central1/forecast?lat=38.900497&lon=-77.007507](http://127.0.0.1:5001/forecast-project-cloud/us-central1/forecast?lat=38.900497&lon=-77.007507)
 
@@ -304,7 +294,7 @@ Go to the browser on:
 
 the result should be the following
 
-![frontend-response](img/frontend-response.png)
+![frontend-response](https://raw.githubusercontent.com/NestorPlasencia/forecast-weather-docs/main/img/frontend-response.png)
 
 ## 5. Deploy
 
@@ -344,7 +334,7 @@ firebase login
 
 [https://firebase.google.com/pricing](https://firebase.google.com/pricing)
 
-**Deploy to yout firebase project**
+**Deploy to your firebase project**
 
 ```
 npn run deploy
